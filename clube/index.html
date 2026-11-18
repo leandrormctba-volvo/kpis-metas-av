@@ -43,8 +43,8 @@
   .intro .marca .desc { animation:aparece .8s ease both; animation-delay:2.6s; }
   @keyframes aparece { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:none; } }
 
-  .cartoes { grid-column:2; display:grid; grid-template-columns:repeat(5,1fr); gap:18px; }
-  .cartao { position:relative; display:flex; flex-direction:column; justify-content:space-between; min-height:210px; padding:20px 18px 18px;
+  .cartoes { grid-column:2; display:grid; grid-template-columns:repeat(5,1fr); gap:14px; max-width:860px; justify-self:end; width:100%; }
+  .cartao { position:relative; display:flex; flex-direction:column; justify-content:space-between; min-height:150px; padding:14px 13px 13px;
     border-radius:18px; text-decoration:none; color:#fff; overflow:hidden;
     background:linear-gradient(180deg,#1b93ab 0%,#14788c 45%,#0c5868 100%); border:1px solid rgba(255,255,255,.14);
     box-shadow:inset 0 1px 0 rgba(255,255,255,.35), inset 0 -3px 0 rgba(0,0,0,.18), 0 7px 0 #063a45, 0 20px 34px rgba(0,0,0,.55);
@@ -52,11 +52,11 @@
   .cartao:hover { filter:brightness(1.1); transform:translateY(-6px); box-shadow:inset 0 1px 0 rgba(255,255,255,.35), 0 12px 0 #063a45, 0 28px 40px rgba(0,0,0,.6); }
   .cartao:active { transform:translateY(5px); box-shadow:inset 0 1px 0 rgba(255,255,255,.25), 0 2px 0 #063a45, 0 8px 14px rgba(0,0,0,.5); }
   .cartao:focus-visible, .btn3d:focus-visible, .voltar:focus-visible { outline:3px solid #f08a5d; outline-offset:3px; }
-  .cartao .ic { width:52px; height:52px; border-radius:14px; display:grid; place-items:center; background:rgba(255,255,255,.15); box-shadow:inset 0 1px 0 rgba(255,255,255,.3), 0 3px 8px rgba(0,0,0,.25); }
-  .cartao .ic svg { width:28px; height:28px; }
-  .cartao .titulo { font-family:"Montserrat"; font-weight:800; font-size:15px; letter-spacing:.4px; line-height:1.25; margin-top:18px; text-shadow:0 2px 4px rgba(0,0,0,.3); }
-  .cartao .sub { font-size:12.5px; color:#d6eef2; margin-top:6px; line-height:1.4; }
-  .cartao .ir { margin-top:14px; font-size:12px; font-weight:700; letter-spacing:1.5px; color:#cfeff5; }
+  .cartao .ic { width:38px; height:38px; border-radius:11px; display:grid; place-items:center; background:rgba(255,255,255,.15); box-shadow:inset 0 1px 0 rgba(255,255,255,.3), 0 3px 8px rgba(0,0,0,.25); }
+  .cartao .ic svg { width:21px; height:21px; }
+  .cartao .titulo { font-family:"Montserrat"; font-weight:800; font-size:12.5px; letter-spacing:.3px; line-height:1.25; margin-top:12px; text-shadow:0 2px 4px rgba(0,0,0,.3); }
+  .cartao .sub { font-size:11px; color:#d6eef2; margin-top:4px; line-height:1.35; }
+  .cartao .ir { margin-top:10px; font-size:10.5px; font-weight:700; letter-spacing:1.4px; color:#cfeff5; }
   .intro .cartao { animation:cartaoEntra .7s cubic-bezier(.2,.7,.2,1) both; animation-delay:calc(2.3s + var(--i) * 90ms); }
   @keyframes cartaoEntra { from { opacity:0; transform:translateY(40px) scale(.96); } to { opacity:1; transform:none; } }
   svg.i { fill:none; stroke:#fff; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; }
@@ -72,19 +72,21 @@
   h1 { font-family:"Montserrat"; font-size:clamp(24px,4vw,36px); font-weight:800; letter-spacing:.5px; }
   .interna-conteudo .filete { margin:14px auto 12px; }
   .subt { color:var(--soft2); font-size:15px; margin-bottom:30px; }
-  .botoes { display:grid; grid-template-columns:repeat(auto-fill,minmax(205px,1fr)); gap:18px 16px; }
-  .btn3d { display:flex; align-items:center; gap:11px; padding:11px 13px; border-radius:13px; text-decoration:none; color:#fff; text-align:left;
+  .botoes { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:14px 12px; }
+  .btn3d { display:flex; align-items:center; gap:9px; padding:8px 10px; border-radius:11px; text-decoration:none; color:#fff; text-align:left;
     background:linear-gradient(180deg,#1b93ab 0%,#14788c 45%,#0c5868 100%); border:1px solid rgba(255,255,255,.12);
     box-shadow:inset 0 1px 0 rgba(255,255,255,.35), inset 0 -3px 0 rgba(0,0,0,.18), 0 5px 0 #063a45, 0 12px 20px rgba(0,0,0,.5);
     transition:transform .12s ease, box-shadow .12s ease, filter .2s; animation:cartaoEntra .45s ease both; animation-delay:calc(var(--i,0) * 35ms); }
   .btn3d:hover { filter:brightness(1.08); transform:translateY(-2px); }
   .btn3d:active { transform:translateY(4px); box-shadow:inset 0 1px 0 rgba(255,255,255,.25), 0 1px 0 #063a45, 0 6px 12px rgba(0,0,0,.5); }
   .btn3d.destaque { background:linear-gradient(180deg,#2aa6be 0%,#1b8aa0 45%,#0f6577 100%); }
-  .btn3d .ic { flex:none; width:38px; height:38px; border-radius:11px; display:grid; place-items:center; background:rgba(255,255,255,.14); box-shadow:inset 0 1px 0 rgba(255,255,255,.3); }
-  .btn3d .ic svg { width:21px; height:21px; }
-  .btn3d .titulo { display:block; font-size:12.5px; font-weight:800; letter-spacing:.3px; line-height:1.25; text-shadow:0 2px 4px rgba(0,0,0,.3); word-break:break-word; }
-  .btn3d .sub { display:block; font-size:11px; opacity:.85; margin-top:3px; }
-  .btn3d .seta { margin-left:auto; opacity:.8; font-size:18px; font-weight:700; }
+  .btn3d .ic { flex:none; width:31px; height:31px; border-radius:9px; display:grid; place-items:center; background:rgba(255,255,255,.14); box-shadow:inset 0 1px 0 rgba(255,255,255,.3); }
+  .btn3d .ic svg { width:17px; height:17px; }
+  .btn3d .titulo { display:block; font-size:11.5px; font-weight:800; letter-spacing:.3px; line-height:1.25; text-shadow:0 2px 4px rgba(0,0,0,.3); word-break:break-word; }
+  .btn3d .sub { display:block; font-size:10.5px; opacity:.85; margin-top:2px; }
+  .btn3d .seta { margin-left:auto; opacity:.8; font-size:16px; font-weight:700; }
+  .grupo { text-align:left; margin:26px 0 12px; font:800 12px "Montserrat"; letter-spacing:2px; color:var(--teal-claro); }
+  .grupo:first-of-type { margin-top:0; }
 
   @media (max-width:1180px) { .cartoes { grid-template-columns:repeat(3,1fr); } }
   @media (max-width:820px) {
@@ -97,12 +99,12 @@
     .marca .filete { width:220px; height:6px; margin:14px 0 12px; }
     .marca .desc { font-size:14px; }
     .cartoes { grid-template-columns:1fr 1fr; gap:14px; }
-    .cartao { min-height:150px; padding:14px 12px; border-radius:15px; }
-    .cartao .ic { width:42px; height:42px; border-radius:11px; }
-    .cartao .ic svg { width:22px; height:22px; }
-    .cartao .titulo { font-size:13px; margin-top:12px; }
-    .cartao .sub { font-size:11.5px; }
-    .cartao .ir { margin-top:10px; font-size:11px; }
+    .cartao { min-height:128px; padding:12px 11px; border-radius:14px; }
+    .cartao .ic { width:34px; height:34px; border-radius:10px; }
+    .cartao .ic svg { width:19px; height:19px; }
+    .cartao .titulo { font-size:12px; margin-top:10px; }
+    .cartao .sub { font-size:10.5px; }
+    .cartao .ir { margin-top:8px; font-size:10px; }
     .intro .marca { animation-name:marcaEntraMobile; }
     @keyframes marcaEntraMobile { 0% { opacity:0; transform:scale(1.15); filter:blur(6px); } 40% { opacity:1; transform:scale(1.15); filter:none; } 100% { opacity:1; transform:none; } }
     .interna-conteudo { padding:20px 14px 40px; }
@@ -121,6 +123,7 @@
 </head>
 <body>
   <main class="pagina" id="pagina"><div class="foto"></div><div class="veu"></div><div id="app"></div></main>
+<script src="pastas.js?v=2"></script>
 
 <script>
 // ---------------- endereços do SharePoint ----------------
@@ -202,10 +205,23 @@ const up = s => s.toLocaleUpperCase('pt-BR');
 const itens = n => n === 0 ? 'Vazia' : (n === 1 ? '1 item' : n + ' itens');
 const link = (...p) => '#/' + p.map(encodeURIComponent).join('/');
 
-// ---------------- pastas do SharePoint: [nome, itens, caminho, subpastas] ----------------
-const DOCS = [["AV - English",1,"Shared Documents/AV - English",[]],["METAS",1,"Shared Documents/METAS",[["2024",1,"Shared Documents/METAS/2024"]]],["COMUNICAÇÃO",25,"Shared Documents/COMUNICAÇÃO",[["Fotos Festa Julina 2023",311,"Shared Documents/COMUNICAÇÃO/Fotos Festa Julina 2023"],["Fotos Colônia Inverno 2023",5,"Shared Documents/COMUNICAÇÃO/Fotos Colônia Inverno 2023"],["Videos Sipat",3,"Shared Documents/COMUNICAÇÃO/Videos Sipat"],["Festa da Criança 2024",308,"Shared Documents/COMUNICAÇÃO/Festa da Criança 2024"],["Contratos",15,"Shared Documents/COMUNICAÇÃO/Contratos"],["Fotos Colônia Inverno 2024",12,"Shared Documents/COMUNICAÇÃO/Fotos Colônia Inverno 2024"],["Seleção colônia hot site",5,"Shared Documents/COMUNICAÇÃO/Seleção colônia hot site"],["colônia de férias contato pais",1,"Shared Documents/COMUNICAÇÃO/colônia de férias contato pais"],["Fotos Festa Julina 2024",385,"Shared Documents/COMUNICAÇÃO/Fotos Festa Julina 2024"],["45 Anos AV",8,"Shared Documents/COMUNICAÇÃO/45 Anos AV"],["Vídeo Orientaões Churrasqueiras - Espaços Gourmet",3,"Shared Documents/COMUNICAÇÃO/Vídeo Orientaões Churrasqueiras - Espaços Gourmet"],["Treinamento de marca",1,"Shared Documents/COMUNICAÇÃO/Treinamento de marca"],["Seleção atualização site AV",17,"Shared Documents/COMUNICAÇÃO/Seleção atualização site AV"],["Mailing AV",1,"Shared Documents/COMUNICAÇÃO/Mailing AV"],["Associação Volvo",9,"Shared Documents/COMUNICAÇÃO/Associação Volvo"],["Oliviking 2022 - Comunicação",1,"Shared Documents/COMUNICAÇÃO/Oliviking 2022 - Comunicação"],["Oliviking 2025",20,"Shared Documents/COMUNICAÇÃO/Oliviking 2025"],["FOTOS - 2026 - Drone",13,"Shared Documents/COMUNICAÇÃO/FOTOS - 2026 - Drone"],["Apresentação AV",13,"Shared Documents/COMUNICAÇÃO/Apresentação AV"],["Família AV",100,"Shared Documents/COMUNICAÇÃO/Família AV"],["DIVULGAÇÕES EMAIL - FACEBOOK",73,"Shared Documents/COMUNICAÇÃO/DIVULGAÇÕES EMAIL - FACEBOOK"],["Vídeo orientação segurança Centro de Eventos",3,"Shared Documents/COMUNICAÇÃO/Vídeo orientação segurança Centro de Eventos"],["Pesquisa de marca",1,"Shared Documents/COMUNICAÇÃO/Pesquisa de marca"]]],["Ketlin",12,"Shared Documents/Ketlin",[["PRESTAÇÃO DE CONTAS",18,"Shared Documents/Ketlin/PRESTAÇÃO DE CONTAS"],["PRESTAÇÃO DE CONTAS MEMORIAL",1,"Shared Documents/Ketlin/PRESTAÇÃO DE CONTAS MEMORIAL"],["NOTAS",4,"Shared Documents/Ketlin/NOTAS"],["PRESTAÇÃO DE CONTAS - CAPOEIRA",1,"Shared Documents/Ketlin/PRESTAÇÃO DE CONTAS - CAPOEIRA"]]],["Lazer",33,"Shared Documents/Lazer",[["Leticia",15,"Shared Documents/Lazer/Leticia"],["ATIVIDADES SOCIAIS",28,"Shared Documents/Lazer/ATIVIDADES SOCIAIS"],["FOTOS",22,"Shared Documents/Lazer/FOTOS"],["AGENDA - VIKING FAMÍLIA",9,"Shared Documents/Lazer/AGENDA - VIKING FAMÍLIA"],["CONSELHO",17,"Shared Documents/Lazer/CONSELHO"],["LEANDRO",52,"Shared Documents/Lazer/LEANDRO"],["ATIVIDADES ESPORTIVAS",16,"Shared Documents/Lazer/ATIVIDADES ESPORTIVAS"],["CLUBE GAZETA",7,"Shared Documents/Lazer/CLUBE GAZETA"],["JULIO",9,"Shared Documents/Lazer/JULIO"],["CRIS",67,"Shared Documents/Lazer/CRIS"]]],["Integração Rápida",3,"Shared Documents/Integração Rápida",[["Integração Rapidas 2023",1,"Shared Documents/Integração Rápida/Integração Rapidas 2023"]]],["PPT Health and Safety Award",1,"Shared Documents/PPT Health and Safety Award",[]],["PESQUISAS",5,"Shared Documents/PESQUISAS",[["2023",20,"Shared Documents/PESQUISAS/2023"],["2026",6,"Shared Documents/PESQUISAS/2026"],["2025",29,"Shared Documents/PESQUISAS/2025"],["2022",16,"Shared Documents/PESQUISAS/2022"],["2024",59,"Shared Documents/PESQUISAS/2024"]]],["RD's",2,"Shared Documents/RD's",[["2026",1,"Shared Documents/RD's/2026"],["2024",1,"Shared Documents/RD's/2024"]]],["CRIS",13,"Shared Documents/CRIS",[]],["AV Clube",125,"Shared Documents/AV Clube",[["RESERVAS CORPORATIVAS - SALÕES e CENTRO DE EVENTOS",24,"Shared Documents/AV Clube/RESERVAS CORPORATIVAS - SALÕES e CENTRO DE EVENTOS"],["Escala",26,"Shared Documents/AV Clube/Escala"],["CENTRO DE EVENTOS",5,"Shared Documents/AV Clube/CENTRO DE EVENTOS"],["contratos",77,"Shared Documents/AV Clube/contratos"],["TERMOS",2,"Shared Documents/AV Clube/TERMOS"],["COMPRAS",21,"Shared Documents/AV Clube/COMPRAS"],["Cadastros Atualização",2,"Shared Documents/AV Clube/Cadastros Atualização"],["Protocolos",7,"Shared Documents/AV Clube/Protocolos"],["VALORES CLUBE",2,"Shared Documents/AV Clube/VALORES CLUBE"],["A3",2,"Shared Documents/AV Clube/A3"],["TERMOS LGPD",3,"Shared Documents/AV Clube/TERMOS LGPD"],["ESTAGIÁRIOS",18,"Shared Documents/AV Clube/ESTAGIÁRIOS"],["SÓCIO VITALÍCIO",8,"Shared Documents/AV Clube/SÓCIO VITALÍCIO"],["escopo limpeza",1,"Shared Documents/AV Clube/escopo limpeza"],["Financeiro",35,"Shared Documents/AV Clube/Financeiro"],["Salão de festas",3,"Shared Documents/AV Clube/Salão de festas"],["RESERVAS SALA DE JOGOS",5,"Shared Documents/AV Clube/RESERVAS SALA DE JOGOS"],["EMPÓRIO",4,"Shared Documents/AV Clube/EMPÓRIO"],["LIMPEZA",13,"Shared Documents/AV Clube/LIMPEZA"],["RD",12,"Shared Documents/AV Clube/RD"],["Integração",5,"Shared Documents/AV Clube/Integração"],["DOCUMENTOS AV",26,"Shared Documents/AV Clube/DOCUMENTOS AV"],["Calendário",45,"Shared Documents/AV Clube/Calendário"],["Descritivo das atividades",1,"Shared Documents/AV Clube/Descritivo das atividades"],["Planejamento",1,"Shared Documents/AV Clube/Planejamento"],["RESERVAS",30,"Shared Documents/AV Clube/RESERVAS"],["SG3",3,"Shared Documents/AV Clube/SG3"],["Logo",1,"Shared Documents/AV Clube/Logo"],["PROJETOS",26,"Shared Documents/AV Clube/PROJETOS"],["Contratos 2026",38,"Shared Documents/AV Clube/Contratos 2026"],["Limnobras",1,"Shared Documents/AV Clube/Limnobras"],["CURSOS",5,"Shared Documents/AV Clube/CURSOS"],["responsabilidades",13,"Shared Documents/AV Clube/responsabilidades"],["png",1,"Shared Documents/AV Clube/png"],["CARTÕES PREMIAÇÕES",7,"Shared Documents/AV Clube/CARTÕES PREMIAÇÕES"],["VPS",17,"Shared Documents/AV Clube/VPS"],["ALMOXARIFADO ESPORTIVO",12,"Shared Documents/AV Clube/ALMOXARIFADO ESPORTIVO"],["Cadastros Sistema de Reservas",3,"Shared Documents/AV Clube/Cadastros Sistema de Reservas"],["EBD",1,"Shared Documents/AV Clube/EBD"]]],["LOGOS",71,"Shared Documents/LOGOS",[["OLIVIKING",7,"Shared Documents/LOGOS/OLIVIKING"],["VOLVO 2019",1,"Shared Documents/LOGOS/VOLVO 2019"],["LOGO 40 ANOS FINAL",10,"Shared Documents/LOGOS/LOGO 40 ANOS FINAL"],["Logos Viking Runners",6,"Shared Documents/LOGOS/Logos Viking Runners"]]],["Trilhas - SID",2,"Shared Documents/Trilhas - SID",[]],["CONTRATOS AV",20,"Shared Documents/CONTRATOS AV",[["DPA        DPC",6,"Shared Documents/CONTRATOS AV/DPA        DPC"],["contratos ativos",18,"Shared Documents/CONTRATOS AV/contratos ativos"]]],["Arquivos Propay",2,"Shared Documents/Arquivos Propay",[["Arquivo Propay - Ativo e Demitidos",2,"Shared Documents/Arquivos Propay/Arquivo Propay - Ativo e Demitidos"],["Solicitação de Debito",2,"Shared Documents/Arquivos Propay/Solicitação de Debito"]]],["Sid",116,"Shared Documents/Sid",[["desktop",0,"Shared Documents/Sid/desktop"],["Plotagem",0,"Shared Documents/Sid/Plotagem"],["Relatórios",0,"Shared Documents/Sid/Relatórios"],["Integração Viking",0,"Shared Documents/Sid/Integração Viking"]]],["Layout- Plantas Associação e Memorial",2,"Shared Documents/Layout- Plantas Associação e Memorial",[["DWG",9,"Shared Documents/Layout- Plantas Associação e Memorial/DWG"],["PDF",36,"Shared Documents/Layout- Plantas Associação e Memorial/PDF"]]],["TP - DESCRITIVOS DE ATIVIDADES",20,"Shared Documents/TP - DESCRITIVOS DE ATIVIDADES",[]],["CONTROLE DE MATERIAIS",2,"Shared Documents/CONTROLE DE MATERIAIS",[]],["Financeiro",21,"Shared Documents/Financeiro",[["ND VCE",11,"Shared Documents/Financeiro/ND VCE"],["NFS",24,"Shared Documents/Financeiro/NFS"],["Fechamentos das Atividades realizadas",4,"Shared Documents/Financeiro/Fechamentos das Atividades realizadas"],["Obra ADM",5,"Shared Documents/Financeiro/Obra ADM"],["Lançamentos Churrasqueiras",5,"Shared Documents/Financeiro/Lançamentos Churrasqueiras"],["Descontos em Folha",8,"Shared Documents/Financeiro/Descontos em Folha"],["financeiro antigo",0,"Shared Documents/Financeiro/financeiro antigo"],["Contratos",14,"Shared Documents/Financeiro/Contratos"],["Acompanhamento Financeiro",2,"Shared Documents/Financeiro/Acompanhamento Financeiro"],["PROCEDIMENTOS FINANCEIRO AV",2,"Shared Documents/Financeiro/PROCEDIMENTOS FINANCEIRO AV"],["Clube Gazeta",3,"Shared Documents/Financeiro/Clube Gazeta"],["FOLHAS DÉBITO ATUALIZADA",9,"Shared Documents/Financeiro/FOLHAS DÉBITO ATUALIZADA"],["Relatório de Despesas - Cartão de Crédito",7,"Shared Documents/Financeiro/Relatório de Despesas - Cartão de Crédito"],["Sócios Ouro",5,"Shared Documents/Financeiro/Sócios Ouro"]]],["Budget",2,"Shared Documents/Budget",[["2025",0,"Shared Documents/Budget/2025"],["2024",3,"Shared Documents/Budget/2024"]]],["Mariana",2,"Shared Documents/Mariana",[]],["Documentos AV",3,"Shared Documents/Documentos AV",[]],["Controle de Horas",5,"Shared Documents/Controle de Horas",[["ADRIANO",4,"Shared Documents/Controle de Horas/ADRIANO"],["LETICIA",4,"Shared Documents/Controle de Horas/LETICIA"],["CRISTIANO",1,"Shared Documents/Controle de Horas/CRISTIANO"],["JULIO",2,"Shared Documents/Controle de Horas/JULIO"],["LEANDRO",5,"Shared Documents/Controle de Horas/LEANDRO"]]],["VPS",7,"Shared Documents/VPS",[["QKaizen",6,"Shared Documents/VPS/QKaizen"],["2026",17,"Shared Documents/VPS/2026"],["2025",12,"Shared Documents/VPS/2025"],["PESQUISAS",2,"Shared Documents/VPS/PESQUISAS"]]]];
-const LOGOS = [["Selo 45 Anos AV",5,"Logos/Selo 45 Anos AV"],["Espaço Soccer",12,"Logos/Espaço Soccer"],["Volvo",6,"Logos/Volvo"],["Oliviking",6,"Logos/Oliviking"],["AV",5,"Logos/AV"],["Colonia de Ferias",5,"Logos/Colonia de Ferias"]];
-const pastaDoc = caminho => pastaUrl('Shared Documents', caminho.replace(/^Shared Documents\//, 'Shared Documents/'));
+// ---------------- pastas do SharePoint: vêm de pastas.js (ARVORE) ----------------
+// nó = [nome, arquivos diretos, [subpastas]]
+const filhos = no => no[2] || [];
+const arquivos = no => no[1] || 0;
+const BIBLIO = { documentos: { nome: 'Documentos', lib: 'Shared Documents', raiz: ARVORE.D, icone: 'pasta' },
+                 logos:      { nome: 'Logos',      lib: 'Logos',            raiz: ARVORE.L, icone: 'imagem' } };
+function acha(lista, caminho) {            // percorre a árvore pelos nomes
+  let no = null, nivel = lista;
+  for (const nome of caminho) { no = nivel.find(x => x[0] === nome); if (!no) return null; nivel = filhos(no); }
+  return no;
+}
+function resumo(no) {
+  const a = arquivos(no), p = filhos(no).length, partes = [];
+  if (p) partes.push(p === 1 ? '1 pasta' : p + ' pastas');
+  if (a) partes.push(a === 1 ? '1 arquivo' : a + ' arquivos');
+  return partes.join(' · ') || 'Pasta';
+}
 
 // Itens do antigo menu lateral (página inicial), em ordem alfabética.
 // destino: '#/...' navega aqui dentro; URL do SharePoint abre na mesma aba (fora do quadro).
@@ -263,35 +279,51 @@ function render() {
     window.scrollTo(0, 0);
     return;
   }
+  const b = BIBLIO[partes[0]];
+  if (!b) { location.hash = '#/'; return; }
   pag.className = 'pagina interna';
-  let html = '';
 
-  if (partes[0] === 'documentos' && partes.length === 1) {
-    const ord = [...DOCS].sort((a, b) => alfa(a[0], b[0]));
-    html = topo('Documentos', 'Cada pasta é um botão. Clique para entrar.', [INICIO, ['Documentos', link('documentos')]]) +
-      `<div class="botoes">${ord.map((d, i) => d[3].length
-        ? botao(link('documentos', d[0]), iconePara(d[0]), d[0], itens(d[1]), i)
-        : botao(pastaDoc(d[2]), iconePara(d[0]), d[0], itens(d[1]) + ' · abre a pasta', i, true)).join('')}</div>`;
-  } else if (partes[0] === 'documentos') {
-    const d = DOCS.find(x => x[0] === partes[1]);
-    if (!d) { location.hash = link('documentos'); return; }
-    html = topo(d[0], 'Subpastas desta pasta. Clique para abrir no SharePoint.', [INICIO, ['Documentos', link('documentos')], [d[0], link('documentos', d[0])]]) +
-      `<div class="botoes">` +
-        botao(pastaDoc(d[2]), 'abrir', 'Ver arquivos desta pasta', 'Abre ' + d[0] + ' no SharePoint', 0, true, 'destaque') +
-        [...d[3]].sort((a, b) => alfa(a[0], b[0])).map((s, i) => botao(pastaDoc(s[2]), iconePara(s[0]), s[0], itens(s[1]), i + 1, true)).join('') +
+  const caminho = partes.slice(1);                       // nomes das pastas, do topo até a atual
+  const no = caminho.length ? acha(b.raiz, caminho) : null;
+  if (caminho.length && !no) { location.hash = link(partes[0]); return; }
+  const lista = no ? filhos(no) : b.raiz;
+  const titulo = no ? no[0] : b.nome;
+
+  // trilha: Início › Documentos › pasta › subpasta …
+  const trilha = [INICIO, [b.nome, link(partes[0])]];
+  caminho.forEach((_, i) => trilha.push([caminho[i], link(partes[0], ...caminho.slice(0, i + 1))]));
+
+  const caminhoSP = caminho.length ? b.lib + '/' + caminho.join('/') : b.lib;
+  const qtd = no ? arquivos(no) : 0;
+  const subt = lista.length ? 'Clique numa pasta para entrar.' : 'Esta pasta não tem subpastas.';
+
+  let html = topo(titulo, subt, trilha);
+  html += `<div class="botoes">` +
+    botao(pastaUrl(b.lib, caminhoSP), 'abrir',
+      no ? (qtd ? `Ver os ${qtd} arquivos desta pasta` : 'Abrir esta pasta no SharePoint') : 'Abrir ' + b.nome + ' no SharePoint',
+      'Abre no SharePoint · o Voltar traz você de volta aqui', 0, true, 'destaque') + `</div>`;
+  if (lista.length) {
+    html += `<p class="grupo">PASTAS</p><div class="botoes">` +
+      [...lista].sort((x, y) => alfa(x[0], y[0])).map((s, i) =>
+        botao(link(partes[0], ...caminho, s[0]), iconePara(s[0], b.icone), s[0], resumo(s), i + 1)).join('') +
       `</div>`;
-  } else if (partes[0] === 'logos') {
-    html = topo('Logos', 'Logos e selos, separados por pasta. Clique para abrir no SharePoint.', [INICIO, ['Logos', link('logos')]]) +
-      `<div class="botoes">` +
-        botao(pastaUrl('Logos', 'Logos'), 'abrir', 'Ver toda a biblioteca', 'Abre Logos no SharePoint', 0, true, 'destaque') +
-        [...LOGOS].sort((a, b) => alfa(a[0], b[0])).map((l, i) => botao(pastaUrl('Logos', l[2]), iconePara(l[0], 'imagem'), l[0], itens(l[1]), i + 1, true)).join('') +
-      `</div>`;
-  } else {
-    location.hash = '#/'; return;
   }
   app.innerHTML = `<div class="interna-conteudo">${html}</div>`;
   window.scrollTo(0, 0);
 }
+
+// Ao sair para o SharePoint (mesma aba), guarda onde estava; ao voltar, reabre a mesma pasta.
+document.addEventListener('click', e => {
+  const a = e.target.closest('a[target="_top"]');
+  if (a) { try { sessionStorage.setItem('clubeVolta', JSON.stringify({ h: location.hash, t: Date.now() })); } catch (_) {} }
+});
+(function retomar() {
+  try {
+    const v = JSON.parse(sessionStorage.getItem('clubeVolta') || 'null');
+    sessionStorage.removeItem('clubeVolta');
+    if (v && v.h && v.h !== '#/' && Date.now() - v.t < 4 * 3600 * 1000 && !location.hash) { jaAbriu = true; history.replaceState(null, '', v.h); }
+  } catch (_) {}
+})();
 
 // abertura: CLUBE começa no centro da tela e vai para a esquerda
 function abrir() {
