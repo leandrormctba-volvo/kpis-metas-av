@@ -241,7 +241,9 @@ const destino = d => d.startsWith('#') ? `href="${d}"` : `href="${encodeURI(d).r
 
 // ---------------- peças ----------------
 function botao(href, icone, titulo, desc, i, fora, classe) {
-  const alvo = fora ? `href="${href}" target="_top"` : `href="${href}"`;
+  // fora: 'nova' = abre numa aba nova (arquivos); true = mesma aba, fora do quadro; falso = navega aqui dentro
+  const alvo = fora === 'nova' ? `href="${href}" target="_blank" rel="noopener"`
+             : fora ? `href="${href}" target="_top"` : `href="${href}"`;
   return `<a class="btn3d${classe ? ' ' + classe : ''}" ${alvo} style="--i:${i || 0}"><span class="ic">${svg(icone)}</span>` +
          `<span><span class="titulo">${esc(up(titulo))}</span><span class="sub">${esc(desc)}</span></span><span class="seta">›</span></a>`;
 }
@@ -301,7 +303,7 @@ function render() {
   html += `<div class="botoes">` +
     botao(pastaUrl(b.lib, caminhoSP), 'abrir',
       no ? (qtd ? `Ver os ${qtd} arquivos desta pasta` : 'Abrir esta pasta no SharePoint') : 'Abrir ' + b.nome + ' no SharePoint',
-      'Abre no SharePoint · o Voltar traz você de volta aqui', 0, true, 'destaque') + `</div>`;
+      'Abre em uma nova aba · esta tela continua aberta aqui', 0, 'nova', 'destaque') + `</div>`;
   if (lista.length) {
     html += `<p class="grupo">PASTAS</p><div class="botoes">` +
       [...lista].sort((x, y) => alfa(x[0], y[0])).map((s, i) =>
