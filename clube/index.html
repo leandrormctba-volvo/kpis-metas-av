@@ -118,10 +118,20 @@
     .btn3d .sub { font-size:10px; }
     .btn3d .seta { font-size:14px; }
   }
+  /* ---------- embutida no SharePoint: fundo transparente (aparece a imagem de fundo da seção) ---------- */
+  html.embutido, html.embutido body { background:transparent; }
+  html.embutido .foto { display:none; }
+  html.embutido .pagina.home .veu { display:none; }
+  html.embutido .pagina.interna .veu { background:rgba(5,38,46,.55); }
+
   @media (prefers-reduced-motion: reduce) { .intro .marca, .intro .marca *, .intro .cartao, .btn3d, .pagina.home .foto { animation:none !important; } }
 </style>
 </head>
 <body>
+<script>
+// Dentro do SharePoint (iframe): fundo transparente. Aberta direto: mantém a foto.
+try { if (window.self !== window.top) document.documentElement.classList.add('embutido'); } catch (e) { document.documentElement.classList.add('embutido'); }
+</script>
   <main class="pagina" id="pagina"><div class="foto"></div><div class="veu"></div><div id="app"></div></main>
 <script src="pastas.js?v=2"></script>
 
