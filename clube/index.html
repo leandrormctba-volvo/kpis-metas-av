@@ -43,7 +43,7 @@
   .intro .marca .desc { animation:aparece .8s ease both; animation-delay:2.6s; }
   @keyframes aparece { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:none; } }
 
-  .cartoes { grid-column:2; display:grid; grid-template-columns:repeat(5,1fr); gap:14px; max-width:860px; justify-self:end; width:100%; }
+  .cartoes { grid-column:2; display:grid; grid-template-columns:repeat(4,1fr); gap:14px; max-width:760px; justify-self:end; width:100%; }
   .cartao { position:relative; display:flex; flex-direction:column; justify-content:space-between; min-height:150px; padding:14px 13px 13px;
     border-radius:18px; text-decoration:none; color:#fff; overflow:hidden;
     background:linear-gradient(180deg,#1b93ab 0%,#14788c 45%,#0c5868 100%); border:1px solid rgba(255,255,255,.14);
@@ -88,7 +88,7 @@
   .grupo { text-align:left; margin:26px 0 12px; font:800 12px "Montserrat"; letter-spacing:2px; color:var(--teal-claro); }
   .grupo:first-of-type { margin-top:0; }
 
-  @media (max-width:1180px) { .cartoes { grid-template-columns:repeat(3,1fr); } }
+  @media (max-width:1180px) { .cartoes { grid-template-columns:repeat(2,1fr); max-width:520px; } }
   @media (max-width:820px) {
     .home-conteudo { grid-template-columns:1fr; padding:24px 16px 40px; gap:22px; align-items:start; align-content:end; }
     .pagina.home .foto { bottom:auto; height:56vh; background-position:16% 78%; }
@@ -233,19 +233,13 @@ function resumo(no) {
   return partes.join(' · ') || 'Pasta';
 }
 
-// Itens do antigo menu lateral (página inicial), em ordem alfabética.
+// Cartões da página inicial, na ordem escolhida pelo Leandro.
 // destino: '#/...' navega aqui dentro; URL do SharePoint abre na mesma aba (fora do quadro).
 const MENU = [
-  ['Calendário anual de eventos', 'calendario',  'Eventos do ano',          SP + '/Lists/CALENDRIO ANUAL DE EVENTOS/AllItems.aspx'],
-  ['Conteúdo do site',            'grade',       'Listas e bibliotecas',    SP + '/_layouts/15/viewlsts.aspx'],
   ['Documentos',                  'pasta',       'Todas as pastas da AV',   link('documentos')],
   ['KPIs e Metas',                'grafico',     'Pesquisas e calendário',  SP + '/SitePages/KPIs-e-Metas.aspx'],
-  ['Lista de limitador',          'listaSimples','Lista do SharePoint',     SP + '/Lists/Lista de limitador/AllItems.aspx'],
   ['Logos',                       'imagem',      'Logos e selos da AV',     link('logos')],
-  ['Páginas',                     'paginas',     'Páginas do site',         SP + '/SitePages/Forms/ByAuthor.aspx'],
-  ['Parent Team',                 'equipe',      'Equipe no Teams',         SP + '/_layouts/15/groupstatus.aspx?Id=ba02fdb0-4e92-467d-814b-c9a487a73ecf&Target=PRIVATECHANNEL'],
-  ['Teste formulário',            'lista',       'Lista do SharePoint',     SP + '/Lists/TESTE FORMULARIO/AllItems.aspx'],
-  ['Teste limitador Africa',      'globo',       'Lista do SharePoint',     SP + '/Lists/Teste limitador Africa/AllItems.aspx']
+  ['Calendário anual de eventos', 'calendario',  'Eventos do ano',          SP + '/Lists/CALENDRIO ANUAL DE EVENTOS/AllItems.aspx']
 ];
 const destino = d => d.startsWith('#') ? `href="${d}"` : `href="${encodeURI(d).replace(/%25/g, '%')}" target="_top"`;
 
