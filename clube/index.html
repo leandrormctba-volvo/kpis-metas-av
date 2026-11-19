@@ -123,6 +123,15 @@
   html.embutido .foto { display:none; }
   html.embutido .pagina.home .veu { display:none; }
   html.embutido .pagina.interna .veu { background:rgba(5,38,46,.55); }
+  /* no SharePoint: CLUBE no canto superior esquerdo e os botões logo ao lado, no topo */
+  @media (min-width:821px) {
+    html.embutido .home-conteudo { min-height:0; padding:22px 32px 40px; align-items:start; gap:36px; }
+    html.embutido .marca { align-self:start; padding-bottom:0; }
+    html.embutido .marca .clube { font-size:clamp(56px,6vw,88px); }
+    html.embutido .marca .filete { margin:14px 0 12px; }
+    html.embutido .marca .desc { margin-top:10px; }
+    html.embutido .cartoes { justify-self:start; }
+  }
 
   @media (prefers-reduced-motion: reduce) { .intro .marca, .intro .marca *, .intro .cartao, .btn3d, .pagina.home .foto { animation:none !important; } }
 </style>
