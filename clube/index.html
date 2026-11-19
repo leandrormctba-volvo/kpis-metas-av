@@ -141,6 +141,17 @@
     html.embutido .marca { flex:none; }
     html.embutido .cartoes { flex:1 1 0; min-width:0; max-width:760px; }
   }
+  /* no celular, dentro do SharePoint: tudo no topo (antes ficava lá embaixo e a tela parecia vazia) */
+  @media (max-width:820px) {
+    html.embutido .home-conteudo { min-height:0; padding:18px 4px 30px; align-content:start; gap:16px; }
+    html.embutido .marca { padding-top:0; }
+    html.embutido .marca .clube { font-size:44px; letter-spacing:5px; }
+    html.embutido .marca .filete { width:180px; margin:10px 0 8px; }
+    html.embutido .marca .desc { margin-top:6px; font-size:13px; }
+    html.embutido .cartao.grande, html.embutido .cartao.pequeno { grid-column:span 3; min-height:118px; }
+    html.embutido .cartao.pequeno:last-child { grid-column:span 6; min-height:96px; }
+    html.embutido .cartao.grande .titulo { font-size:13px; }
+  }
 
   @media (prefers-reduced-motion: reduce) { .intro .marca, .intro .marca *, .intro .cartao, .btn3d, .pagina.home .foto { animation:none !important; } }
 </style>
