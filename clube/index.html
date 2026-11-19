@@ -24,7 +24,7 @@
 
   /* ---------- início ---------- */
   .home-conteudo { position:relative; max-width:1440px; margin:0 auto; padding:56px 40px; min-height:100vh;
-    display:grid; grid-template-columns:minmax(300px,.9fr) 2fr; gap:48px; align-items:center; }
+    display:grid; grid-template-columns:minmax(300px,.9fr) minmax(0,2fr); gap:48px; align-items:center; }
   .marca { grid-column:1; align-self:end; padding-bottom:10px; }
   .marca .clube { font-family:"Montserrat"; font-weight:900; font-size:clamp(56px,7vw,104px); letter-spacing:10px; line-height:1; color:#fff; text-shadow:0 6px 24px rgba(0,0,0,.5); }
   .filete { width:90px; height:6px; border-radius:6px; margin:22px 0 18px; background:linear-gradient(90deg,#063a45 0%,#0c5868 30%,#14788c 65%,#3fa7bd 100%); }
@@ -43,7 +43,7 @@
   .intro .marca .desc { animation:aparece .8s ease both; animation-delay:2.6s; }
   @keyframes aparece { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:none; } }
 
-  .cartoes { grid-column:2; display:grid; grid-template-columns:repeat(6,1fr); gap:14px; max-width:760px; justify-self:end; width:100%; }
+  .cartoes { grid-column:2; display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:14px; max-width:760px; justify-self:end; width:100%; }
   /* 1ª linha: 2 cartões grandes (meia largura cada); 2ª linha: 3 cartões menores, alinhados embaixo */
   .cartao.grande { grid-column:span 3; min-height:170px; }
   .cartao.grande .ic { width:46px; height:46px; }
